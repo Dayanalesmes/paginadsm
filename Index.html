@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSM - Digital Sponsored Marketing </title>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #FFFAFA;
+            margin: 0;
+            padding: 0;
+            color: #10213B;
+            letter-spacing: -0.01em; 
+            line-height: 1.6; 
+            font-size: 18px; 
+            text-align: justify;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            background: linear-gradient(to right, #10213B 60%, #063B86);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+            transition: background-color 0.5s, opacity 0.5s, height 0.5s;
+        }
+
+        header.transparent {
+            background-color: rgba(16, 33, 59, 0.8);
+        }
+
+        header img {
+            height: 80px;
+            width: 80px;
+        }        
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        header a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding-top: 80px; 
+            text-align: justify;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: justify;
+            align-items: center;
+        }
+
+        .image-section {
+            background: url(Images/Consultoría\ de\ Marketing\ Digital.png) no-repeat center center/cover;
+            height: 490px;
+        }
+ 
+        h2 {
+            font-size: 38px;
+            color: #0A2F63;
+            letter-spacing: -0.02em
+        }
+
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-left: 30px;
+            gap: 80px;
+        }
+
+        @media (min-width: 768px) {
+            .two-columns {
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 30px;
+                gap: 80px;
+            }   
+        }
+        
+        .two-columns div {
+            width: 50%;
+        }
+
+        .products {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            margin-left: 30px;
+            margin-right: 30px;
+            gap: 70px;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .product {
+                flex-direction: row;
+                align-items: center;
+                gap: 50px;
+            }
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+
+        .clients {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .clients h2 {
+            margin-bottom: 20px;
+        }
+
+        .clients img {
+            max-height: 80px; 
+            margin: 10px;
+        }
+
+        .client-logos {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 150px; 
+            margin-top: 20px;
+        }
+
+        .logo-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .logo-track img {
+            height: 100px; 
+            margin: 0 10px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+         }
+
+        .contact-section {
+            background: linear-gradient(to right, #10213B 70%, #063B86);
+            color: white;
+            padding: 40px 20px;
+        } 
+
+        .contact-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: 14px
+        } 
+
+        @media (min-width: 768px) {
+            .contact-columns {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .contact-columns div {
+            flex: 1;
+        }
+
+        .contact-columns h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-columns ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-columns ul li {
+            margin: 10px 0;
+        }
+
+        .contact-columns ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-columns ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-columns img {
+            max-width: 30%;
+            height: auto;
+            max-bottom: 10x;
+        }
+
+        .products-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .products-list li {
+            margin: 10px 0;
+            display: flex;
+        }
+
+        .products-list li::before {
+            content: "•";
+            color: #544D46;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .products-list a {
+            color: #10213B;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        .products-list a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-contact {
+            background-color: #E75649;
+            color: white;
+            border: none;
+            border-radius: 5%;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            background-color: #004AAD;
+        } 
+
+        .new-section {
+            text-align: center;
+            padding: 20px 20px;
+        }
+
+        .new-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .new-section .btn-contact {
+            display: inline-block;
+            margin: 20px auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Index.html"><img src="Images/DSM.png" alt="DSM Logo"></a>
+        <nav>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Servicios.html">Servicios</a>
+            <a href="Precios.html">Precios</a>
+            <a href="Contactenos.html">Contactenos</a>
+        </nav>
+    </header>
+    <main>
+        <section class="image-section"></section>
+        <section class="two-columns">
+            <div>
+                <h2>¿Qué es Digital Sponsored Marketing DSM?</h2>
+	      <p> Somos una empresa que brinda servicios de consultoría de marketing digital brindándole a su empresa una solución única para todos sus servicios de publicidad y marketing en línea. Impulsado por el poder y las posibilidades que brindan las herramientas digitales, el equipo de DSM trabaja a velocidad y en sincronía para crear para brindar satisfacción a nuestros clientes a través de la aplicación inteligente de datos.</p>
+            </div>
+            <div>
+                <h2>Nuestros Servicios</h2>
+                <ul class="products-list">
+                    <li><a href="Servicios.html">Paid Media</a></li>
+                    <li><a href="Servicios.html">Crecimiento Orgánico (SEO)</a></li>
+                    <li><a href="Servicios.html">Estrategia de Marketing Digital</a></li>
+                    <li><a href="Servicios.html">Capacitación Equipos de Marketing Digital</a></li>
+                    <li><a href="Servicios.html">Diseño y Desarrollo de Páginas Web</a></li>
+                </ul>
+                <a href="Contactenos.html" class="btn-contact">Contactenos</a>
+            </div>
+        </section>
+        <section class="products">
+            <div class="product">
+                <div>
+                    <h2><a href="Servicios.html" style="color: inherit; text-decoration: none;">Paid Media</a></h2>
+                    <p>Paid media implica aprovechar los canales de publicidad paga para promocionar su negocio y llegar a su público objetivo. Este servicio incluye estrategias como publicidad de pago por click (PPC) y redes sociales pagas. Aproveche al máximo su inversion en redes sociales desde la creación de anuncios hasta el seguimiento de las campañas, todo respaldado por nuestro equipo de consultores expertos en automatización y optimización de Social Media Marketing.</p>
+                </div>
+                <img src="Images/Producto 1.png" alt="Producto 1">
+            </div>
+            <div class="product">
+                <img src="Images/Producto 2.png" alt="Producto 2">
+                <div>
+                    <h2><a href="Servicios.html" style="color: inherit; text-decoration: none;">Crecimiento Orgánico SEO</a></h2>
+                    <p>SEO es una estrategia fundamental que mejora el rendimiento del sitio web, aumenta la visibilidad y el posicionamiento en SERPs generando más tráfico  orgánico y con resultados a largo plazo. </p>
+                </div>
+            </div>
+            <div class="product">
+                <div>
+                    <h2><a href="Servicios.html" style="color: inherit; text-decoration: none;">Estrategia de Marketing Digital</a></h2>
+                    <p>DSM adopta un enfoque totalmente integrado para la estrategia de marketing y ventas, este enfoque abarca todos los aspectos del conocimiento de la marca, la generación y gestión de clientes potenciales, así como los comentarios de los clientes y las tasas de referencia. Con todos estos elementos su empresa maximizara sus oportunidades de ingresos.</p>
+                </div>
+                <img src="Images/Producto 3.png" alt="Producto 3">
+            </div>
+            <div class="product">
+                <img src="Images/producto4.png" alt="Producto 4">
+                <div>
+                    <h2><a href="Servicios.html" style="color: inherit; text-decoration: none;">Capacitación de Equipos de Marketing Digital</a></h2>
+                    <p>Solo el 30% de las marcas navegan con éxito en la transformación digital porque no cuentan con capacidades especializadas que abarquen estrategia y ejecución. Somos un equipo dedicado de consultores y estrategas de marketing digital, comprometidos a impulsar el éxito empresarial a través de soluciones digitales personalizadas. Nuestro enfoque es ofrecer estrategias y conocimientos de vanguardia para empresas de diferentes industrias mediante una orientación integral y personalizada.</p>
+                </div>
+            </div>
+            <div class="product">
+                <div>
+                    <h2><a href="Servicios.html" style="color: inherit; text-decoration: none;">Diseño y Desarrollo de Páginas Web</a></h2>
+                    <p>Como punto de contacto principal para cualquier cliente potencial, la experiencia de usuario al navegar por su sitio web puede marcar la diferencia entre el éxito o el fracaso. En DSM optimizamos los sitios web para garantizar la mejor experiencia de usuario para sus clientes, así mismo, nuestro enfoque garantiza que su sitio web sea respondido y facil de usar, con un diseño funcional y funciones de generación de leads perfectamente integradas.</p>
+                </div>
+                <img src="Images/producto5.png" alt="Producto 5">
+            </div>
+        </section>
+
+        <section class="new-section">
+            <h2>Para quien es DSM?</h2>
+            <img src="Images/seccion por que.png" alt="Nuevo Servicio">
+            <a href="Contactenos.html" class="btn-contact">Contactenos</a>
+        </section>
+
+        <section class="clients">
+            <h2>Nuestros Clientes</h2>
+            <div class="client-logos">
+                <div class="logo-track">
+            <img src="Images/Cliente2.jpg" alt="Client 1">
+            <img src="Images/Cliente1.jpeg" alt="Client 2">
+            <img src="Images/Cliente3.jpg" alt="Client 3">
+            <img src="Images/Cliente4.jpg" alt="Client 4">
+            <img src="Images/Cliente5.jpg" alt="Client 5">
+            <img src="Images/Cliente7.jpg" alt="Client 6">
+            <img src="Images/Cliente6.jpg" alt="Client 7">
+            <img src="Images/Cliente2.jpg" alt="Client 1">
+            <img src="Images/Cliente1.jpeg" alt="Client 2">
+            <img src="Images/Cliente3.jpg" alt="Client 3">
+            <img src="Images/Cliente4.jpg" alt="Client 4">
+            <img src="Images/Cliente5.jpg" alt="Client 5">
+            <img src="Images/Cliente7.jpg" alt="Client 6">
+            <img src="Images/Cliente6.jpg" alt="Client 7">
+                 </div>
+            </div>
+        </section>
+        <section class="contact-section">
+            <div class="contact-columns">
+                <div>
+                    <h3>Nuestros Servicios</h3>
+                    <ul>
+                        <li><a href="Servicios.html">Paid Media</a></li>
+                        <li><a href="Servicios.html">Crecimiento Orgánico (SEO)</a></li>
+                        <li><a href="Servicios.html">Estrategia de Marketing Digital</a></li>
+                        <li><a href="Servicios.html">Capacitación Equipos de Marketing Digital</a></li>
+                        <li><a href="Servicios.html">Diseño y Desarrollo de Páginas Web</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Comunidad</h3>
+                    <ul>
+                        <li><img src="Images/logo insta.png" alt="Community Image 1"></li>
+                        <li><img src="Images/logo whatsapp.png" alt="Community Image 2"></li>
+                        <li><img src="/path/to/image3.jpg" alt="Community Image 3"></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Datos de Contacto</h3>
+                    <p>Dirección: Calle Falsa 123</p>
+                    <p>Email: contacto@dsm.com</p>
+                    <p>Teléfono: +123 456 7890</p>
+                </div>
+                <div>
+                    <h3>Privacidad</h3>
+                    <p>Nos tomamos muy en serio la privacidad de nuestros usuarios. Consulte nuestra política de privacidad y términos de uso para más detalles.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('transparent');
+            } else {
+                header.classList.remove('transparent');
+            }
+        });
+    </script>
+</body>
+</html>
